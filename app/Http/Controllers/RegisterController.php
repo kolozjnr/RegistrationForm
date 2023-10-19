@@ -30,7 +30,7 @@ class RegisterController extends Controller
             'lname' => 'required',
             'email' => 'required|email|unique:users',
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:9048',
-            'password' => 'required|min:6',
+            'password' => 'required|min:6|confirmed',
         ]);
 
         $this->data->register($validated);

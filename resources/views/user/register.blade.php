@@ -457,17 +457,17 @@
                       <div class="row clearfix">
                         <div class="">
                           <form method="POST" enctype="multipart/form-data" action="{{ route('Register') }}">
-                            <div class="input_field"> <span><i class="bi bi-envelope"></i></span>
+                            <div class="input_field"> <span class="mt-1"><i class="bi bi-envelope"></i></span>
                               <input type="email" name="email" placeholder="Email" required />
                             </div>
                             <div class="row clearfix">
                               <div class="col_half">
-                                <div class="input_field"> <span><i aria-hidden="true" class="bi bi-person-fill"></i></span>
+                                <div class="input_field"> <span class="mt-1"><i aria-hidden="true" class="bi bi-person-fill"></i></span>
                                   <input type="text" name="fname" placeholder="First Name" />
                                 </div>
                               </div>
                               <div class="col_half">
-                                <div class="input_field"> <span><i class="bi bi-person-fill"></i></span>
+                                <div class="input_field"> <span class="mt-1"><i class="bi bi-person-fill"></i></span>
                                   <input type="text" name="lname" placeholder="Last Name" required />
                                 </div>
                               </div>
@@ -475,11 +475,11 @@
                             <div class="input_field"> </span>
                                 <input type="file" name="avatar" required>
                               </div>
-                            <div class="input_field"> <span><i aria-hidden="true" class="bi bi-lock-fill"></i></span>
+                            <div class="input_field"> <span class="mt-1"><i aria-hidden="true" class="bi bi-lock-fill"></i></span>
                                 <input type="password" name="password" placeholder="Password" required />
                               </div>
-                            <div class="input_field"> <span><i aria-hidden="true" class="bi bi-lock-fill"></i></span>
-                              <input type="password" name="password" placeholder="Re-type Password" required />
+                            <div class="input_field"> <span class="mt-1"><i aria-hidden="true" class="bi bi-lock-fill"></i></span>
+                              <input type="password" name="password_confirmation" placeholder="Confirm Password" required />
                             </div>
                             <input class="button" type="submit" value="Register" />
                           </form>
