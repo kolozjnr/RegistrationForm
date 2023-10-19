@@ -457,7 +457,6 @@
                       <div class="row clearfix">
                         <div class="">
                           <form method="POST" enctype="multipart/form-data" action="{{ route('Register') }}">
-                            @csrf
                             <div class="input_field"> <span><i class="bi bi-envelope"></i></span>
                               <input type="email" name="email" placeholder="Email" required />
                             </div>
