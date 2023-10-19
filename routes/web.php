@@ -18,8 +18,14 @@ use App\Http\Controllers\RegisterController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', [RegisterController::class, 'index'])->name('Home');
-Route::post('/register', [RegisterController::class, 'register'])->name('Register');
+Route::middleware(['guest'])->group(function(){
+
+    Route::get('/', [RegisterController::class, 'index'])->name('Home');
+    Route::post('/register', [RegisterController::class, 'register'])->name('Register');
+    
+    Route::get('/login', [LoginController::class, 'getLogin'])->name('getLogin');
+    Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
+});
+
 Route::get('/dashboard', [RegisterController::class, 'dashboard'])->middleware(['auth'])->name('Dashboard');
-Route::get('/login', [LoginController::class, 'getLogin'])->name('getLogin');
-Route::post('/login', [LoginController::class, 'postLogin'])->name('login');
+Route::post('/logout', [RegisterController::class, 'logout'])->name('logout');

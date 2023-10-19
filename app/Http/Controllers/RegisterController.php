@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repository\IUserRepository;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -14,6 +15,9 @@ class RegisterController extends Controller
         
     }
     public function index(){
+        if (Auth::check()) {
+            return redirect()->route('/Dashboard');
+        }
         return view('user.register');
     }
     
@@ -29,10 +33,19 @@ class RegisterController extends Controller
             'password' => 'required|min:6',
         ]);
 
-        $user = $this->data->register($validated);
+        $this->data->register($validated);
         
-        Auth::login($user);
 
         return redirect('/dashboard');
+    }
+
+    public function dashboard(){
+        return view('user.dashboard');
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect('/');
     }
 }

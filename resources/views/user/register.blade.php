@@ -447,6 +447,11 @@
                 <div class="form_wrapper">
                     <div class="form_container">
                       <div class="title_container">
+                        @if ($errors->has('email'))
+                        <div class="alert alert-danger">
+                            {{ $errors->first('email') }}
+                        </div>
+                    @endif
                         <h2> Registration Form</h2>
                       </div>
                       <div class="row clearfix">

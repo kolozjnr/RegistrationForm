@@ -447,7 +447,7 @@
                 <div class="form_wrapper">
                     <div class="form_container">
                       <div class="title_container">
-                        <h2> Registration Form</h2>
+                        <h2> Login Form</h2>
                       </div>
                       <div class="row clearfix">
                         <div class="">

@@ -30,7 +30,9 @@ class UserRegistrationRepository implements IUserRepository {
         $to = $userData['email'];
         $subject = 'Welcome Email';
 
-        EmailHelper::sendWelcomeEmail($email, $to, $subject);
+        //EmailHelper::sendWelcomeEmail($email, $to, $subject);
+
+        Auth::login($data);
 
         return $data;
     }
@@ -38,11 +40,8 @@ class UserRegistrationRepository implements IUserRepository {
     public function authenticate(string $email, string $password){
         $credentials = ['email' => $email, 'password' => $password];
         
-        if (Auth::attempt($credentials)) {
-            return Auth::user();
-        }
+        Auth::login($credentials);
         
-
         return null;
     }
 }
