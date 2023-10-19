@@ -30,7 +30,7 @@ class UserRegistrationRepository implements IUserRepository {
         $to = $userData['email'];
         $subject = 'Welcome Email';
 
-        //EmailHelper::sendWelcomeEmail($email, $to, $subject);
+        EmailHelper::sendWelcomeEmail($email, $to, $subject);
 
         Auth::login($data);
 
